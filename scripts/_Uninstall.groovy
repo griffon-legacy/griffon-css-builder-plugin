@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2010 the original author or authors.
+ * Copyright 2009-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,9 @@
  */
 
 // check to see if we already have a CSSBuilder
-boolean addonIsSet1
-builderConfig.each() { prefix, v ->
-    v.each { builder, views ->
-        addonIsSet1 = addonIsSet1 || 'griffon.builder.css.CSSBuilder' == builder
-    }
-}
-
-if(addonIsSet1) {
-    builderConfigFile.text = builderConfigFile.text - "root.'griffon.builder.css.CSSBuilder'.view = '*'\n"
-    builderConfigFile.text = builderConfigFile.text - "root.'griffon.builder.css.CSSBuilder'.controller = ['CSS']\n"
+def configText = '''root.'griffon.builder.css.CSSBuilder'.view = '*'
+root.'griffon.builder.css.CSSBuilder'.controller = ['CSS']'''
+if(builderConfigFile.text.contains(configText)) {
+    println 'Removing CSSBuilder from Builder.groovy'
+    builderConfigFile.text -= configText
 }
