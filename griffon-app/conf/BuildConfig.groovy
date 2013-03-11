@@ -4,20 +4,13 @@ griffon.project.dependency.resolution = {
     repositories {
         griffonHome()
         mavenCentral()
+        mavenLocal()
         mavenRepo 'http://repository.codehaus.org'
     }
     dependencies {
-        compile('org.codehaus.griffon:cssbuilder:0.6') {
+        compile('org.codehaus.griffon:cssbuilder:1.0.0') {
             excludes 'groovy-all'
         }
-    }
-}
-
-griffon {
-    doc {
-        logo = '<a href="http://griffon.codehaus.org" target="_blank"><img alt="The Griffon Framework" src="../img/griffon.png" border="0"/></a>'
-        sponsorLogo = "<br/>"
-        footer = "<br/><br/>Made with Griffon (@griffon.version@)"
     }
 }
 

@@ -18,11 +18,11 @@
  * @author Andres Almiray
  */
 class CssBuilderGriffonPlugin {
-    String version = '1.0.0'
+    String version = '1.1.0'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '1.0.0 > *'
+    String griffonVersion = '1.2.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [swing: '1.0.0']
+    Map dependsOn = [swing: '1.2.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license
